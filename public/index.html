@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación del Sello Verde Raíz Nativa – El Potrero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde-encabezado:#25B46E;
+  --verde-vivo:#00BF63;
+  --verde-tinta:#0E5B39;
+  --verde-profundo:#06361F;
+  --gris-panel:#D9D9D9;
+  --gris-claro:#F1F1F1;
+  --blanco:#FFFFFF;
+  --negro:#000000;
+  --fondo-pagina:#0F1015;
+  --fuente:'Poppins',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--fondo-pagina);font-family:var(--fuente);color:var(--negro);line-height:1.5}
+.invitacion{max-width:480px;margin:0 auto;background:var(--blanco)}
+a{color:inherit}
+
+/* Botón principal: pastilla blanca con sombra dura, como en la pieza original */
+.cta{
+  display:block;width:100%;text-align:center;text-decoration:none;
+  background:var(--blanco);color:var(--verde-tinta);
+  font-weight:800;font-size:1.05rem;letter-spacing:.01em;
+  padding:1rem 1.25rem;border-radius:999px;
+  border:2px solid var(--negro);box-shadow:0 5px 0 var(--negro);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.cta:hover{transform:translateY(2px);box-shadow:0 3px 0 var(--negro)}
+.cta:active{transform:translateY(5px);box-shadow:0 0 0 var(--negro)}
+.cta:focus-visible{outline:3px solid var(--verde-profundo);outline-offset:3px}
+.cta--sec{font-size:.9rem;padding:.7rem 1rem;font-weight:700}
+
+/* Encabezado */
+.hero{background:var(--verde-encabezado);color:var(--blanco);padding:2.5rem 1.75rem 0}
+.hero h1{font-weight:800;font-size:clamp(1.9rem,8vw,2.4rem);line-height:1.12;text-transform:uppercase;max-width:14ch}
+.fecha{display:inline-block;margin:1.1rem 0 -.8rem;background:var(--blanco);color:var(--negro);
+  font-weight:700;font-size:.78rem;padding:.25rem .7rem;position:relative}
+.hero::after{content:"";display:block;height:1.2rem}
+
+/* Cuerpo */
+.cuerpo{padding:1.75rem 1.5rem 1.5rem;display:grid;gap:1rem}
+.banner{background:var(--verde-vivo);color:var(--verde-profundo);border-radius:14px;
+  padding:1rem;text-align:center;font-weight:800;font-size:1.15rem;text-transform:uppercase}
+.bloque-cta{background:var(--verde-vivo);border-radius:14px;padding:1.5rem 1.25rem}
+.panel{background:var(--gris-panel);border-radius:14px;padding:1.1rem 1.25rem 1.4rem}
+.panel h2{color:var(--verde-tinta);font-weight:800;font-size:1.45rem;text-transform:uppercase;line-height:1.2}
+.panel p{margin:.5rem 0 1rem;font-weight:600;font-size:.88rem;color:var(--verde-profundo)}
+.panel a.mail{display:inline-block;margin-top:.5rem;font-weight:600;font-size:.9rem;color:var(--verde-tinta);word-break:break-all}
+.panel a.mail:focus-visible{outline:3px solid var(--verde-profundo);outline-offset:3px}
+.deslizar{text-align:right;font-weight:700;font-size:.75rem;color:var(--verde-profundo)}
+
+/* Programa */
+.programa-head{background:var(--verde-encabezado);color:var(--blanco);padding:2rem 1.75rem 1.75rem}
+.programa-head .fecha{margin:0 0 .9rem}
+.programa-head h2{font-weight:800;font-size:2.2rem;line-height:1.1;text-transform:uppercase}
+.programa-head .sello{font-weight:500;font-size:1rem;margin-top:.25rem}
+.programa-head .lema{display:inline-block;margin-top:.9rem;background:rgba(255,255,255,.28);
+  padding:.35rem .7rem;font-size:.78rem;font-weight:500;border-radius:4px}
+.agenda{padding:1.5rem 1.25rem;display:grid;gap:.75rem}
+.franja{display:grid;grid-template-columns:5.5rem 1fr;background:var(--gris-claro);border-radius:6px;overflow:hidden}
+.hora{background:var(--verde-vivo);color:var(--verde-profundo);font-weight:800;font-size:1rem;
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:.75rem .4rem}
+.detalle{padding:1rem 1.1rem;display:grid;gap:.9rem}
+.detalle h3{font-weight:700;font-size:.95rem;line-height:1.3}
+.detalle .sub{font-size:.8rem;font-weight:500;margin-top:.1rem}
+.charla strong{display:block;font-size:.78rem;font-weight:700}
+.charla span{display:block;font-size:.76rem;font-weight:400;line-height:1.4}
+.corte{background:var(--gris-claro);border-radius:6px;padding:.9rem 1.1rem;text-align:center;font-size:.8rem}
+.corte strong{font-weight:700}
+.cierre{background:var(--verde-vivo);padding:1.75rem 1.5rem;display:grid;gap:.9rem;text-align:center}
+.cierre p{color:var(--verde-profundo);font-weight:700;font-size:1rem}
+.auspicia{background:var(--verde-encabezado);color:var(--blanco);padding:1.4rem 1.5rem;
+  display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;align-items:baseline;justify-content:center}
+.auspicia small{font-weight:500;font-size:.7rem;width:100%;text-align:center}
+.auspicia b{font-weight:800;font-size:1.05rem}
+
+/* Logos */
+.logos{background:var(--gris-panel);display:flex;align-items:center;justify-content:center;gap:2rem;padding:1.1rem 1.5rem}
+.logos img{height:64px;width:auto;max-width:42%;object-fit:contain}
+.auspicia .marcas{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem 2rem;width:100%}
+.auspicia .marcas img{height:56px;width:auto;max-width:44%;object-fit:contain}
+@media (min-width:520px){.invitacion{margin:2rem auto;border-radius:18px;overflow:hidden}}
+@media (prefers-reduced-motion:reduce){.cta{transition:none}}
+</style>
+</head>
+<body>
+<main class="invitacion">
+
+  <header class="hero">
+    <h1>Presentación del Sello Verde Raíz Nativa – El Potrero.</h1>
+    <span class="fecha">25 de Septiembre de 2026</span>
+  </header>
+
+  <section class="cuerpo" aria-label="Invitación">
+    <div class="banner">Invitación especial</div>
+
+    <div class="bloque-cta">
+      <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLScRQRO5e4RpuZWILQnuDQDRjRZ-D2ad0145c6_AR_acyxyYYA/viewform" target="_blank" rel="noopener">Confirmar asistencia</a>
+    </div>
+
+    <div class="panel">
+      <h2>Cómo llegar</h2>
+      <p>Nuevo Acceso a Conexión Vial y Cruce Ruta 26. Victoria, Entre Ríos.</p>
+      <a class="cta cta--sec" href="https://www.google.com/maps/search/?api=1&query=Nuevo+Acceso+a+Conexi%C3%B3n+Vial+y+Cruce+Ruta+26%2C+Victoria%2C+Entre+R%C3%ADos" target="_blank" rel="noopener">Ver ubicación en el mapa</a>
+    </div>
+
+    <div class="panel">
+      <h2>Para consultas:</h2>
+      <a class="mail" href="mailto:elpotreroanpvictoria@gmail.com">elpotreroanpvictoria@gmail.com</a>
+    </div>
+
+    <p class="deslizar">Deslizá para conocer el programa del evento ↓</p>
+  </section>
+
+  <div class="logos">
+    <img src="/images/raiznativa.png" alt="Raíz Nativa – Entre Ríos" width="160" height="64">
+    <img src="/images/LogoPotreroReserva-verde.png" alt="Sello de la Reserva El Potrero" width="64" height="64">
+  </div>
+
+  <section aria-label="Programa">
+    <div class="programa-head">
+      <span class="fecha">25 de Septiembre de 2026</span>
+      <h2>Programa</h2>
+      <p class="sello">Sello verde Raíz Nativa - El Potrero.</p>
+      <span class="lema">“Desarrollo Productivo Responsable - RINI y sus beneficios”</span>
+    </div>
+
+    <div class="agenda">
+      <article class="franja">
+        <div class="hora">17:00 HS</div>
+        <div class="detalle">
+          <div>
+            <h3>Mesa de diálogo</h3>
+            <p class="sub">De buenas prácticas y acciones verdes trazables</p>
+          </div>
+          <div class="charla"><strong>Tema: Sello verde Raíz Nativa.</strong><span>Director de Áreas Naturales Protegidas.<br>Lic. Pablo Acoñolaza</span></div>
+          <div class="charla"><strong>Tema: Desarrollo Productivo Responsable.</strong><span>Dra. Mercedes Gomez Prieto</span></div>
+          <div class="charla"><strong>Tema: Propuesta en acciones verdes para empresas.</strong><span>Dr. Ricardo Luis La Barba</span></div>
+        </div>
+      </article>
+
+      <article class="franja">
+        <div class="hora">18:10 HS</div>
+        <div class="detalle">
+          <div class="charla"><strong>Tema: Política de Conservación Ambiental.</strong><span>Secretaria de Ambiente.<br>Lic. Rosa Hojman</span></div>
+        </div>
+      </article>
+
+      <article class="franja">
+        <div class="hora">18:30 HS</div>
+        <div class="detalle">
+          <div class="charla"><strong>Tema: RINI y otros beneficios.</strong><span>Gobernador de la Provincia de Entre Ríos<br>Lic. Rogelio Frigerio</span></div>
+        </div>
+      </article>
+
+      <div class="corte"><strong>Corte de cinta:</strong> Inauguración oficial del ANP N° 11.204 y del sello verde Raíz Nativa.</div>
+    </div>
+
+    <div class="cierre">
+      <p>Reservá tu lugar en la presentación</p>
+      <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLScRQRO5e4RpuZWILQnuDQDRjRZ-D2ad0145c6_AR_acyxyYYA/viewform" target="_blank" rel="noopener">Confirmar asistencia</a>
+      <a class="cta cta--sec" href="mailto:elpotreroanpvictoria@gmail.com">Escribinos para consultas</a>
+    </div>
+
+    <footer class="auspicia">
+      <small>Auspician:</small>
+      <div class="marcas">
+        <img src="/images/LOGO%20FONDO%20TRANSPARENTE-62.png" alt="Como era Antes – Hotel Boutique" width="160" height="56" loading="lazy">
+        <img src="/images/texom.png" alt="Texom" width="140" height="56" loading="lazy">
+      </div>
+    </footer>
+  </section>
+
+</main>
+</body>
+</html>
